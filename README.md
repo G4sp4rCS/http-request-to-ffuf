@@ -51,10 +51,6 @@ ffuf -w hugeSQL.txt -X POST -u "http://192.168.244.10/login.php" -H "Host: 192.1
 ┌──(kali㉿kali)-[~/Desktop/Proving-Grounds/Cockpit]
 └─$ 
 
-
-
-
-
 ```
 
 ### Example Error Message
