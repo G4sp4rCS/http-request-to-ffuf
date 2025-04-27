@@ -19,6 +19,42 @@ Optional arguments:
     -r, --request    Path to the HTTP request file (default: stdin)
     -o, --output     File to save the results
     -v, --verbose    Enable verbose output for debugging
+
+┌──(kali㉿kali)-[~/Desktop/Proving-Grounds/Cockpit]
+└─$ python3 fuzz.py -r request.txt -p username -w hugeSQL.txt -v
+
+        "     __  __           _        _        
+        |  \/  |         | |      | |       
+        | \  / | __ _  __| | ___  | |__  _   _
+        | |\/| |/ _` |/ _` |/ _ \ | '_ \| | | |
+        | |  | | (_| | (_| |  __/ | |_) | |_| |
+        |_|  |_|\__,_|\__,_|\___| |_.__/ \__, |
+                                          __/ |
+                                         |___/ 
+                                _               
+                               | |              
+          __ _ _ __ _   _ _ __ | |_   __ _ _ __ 
+         / _` | '__| | | | '_ \| __| / _` | '__|
+        | (_| | |  | |_| | | | | |_ | (_| | |   
+         \__, |_|   \__,_|_| |_|\__(_)__,_|_|   
+          __/ |                                
+         |___/  
+        
+Method: POST
+URL: http://192.168.244.10/login.php
+Parameter to fuzz: username
+Parameter location: body_param
+
+Generated ffuf command:
+ffuf -w hugeSQL.txt -X POST -u "http://192.168.244.10/login.php" -H "Host: 192.168.244.10" -H "Content-Length: 29" -H "Cache-Control: max-age=0" -H "Accept-Language: en-US,en;q=0.9" -H "Origin: http://192.168.244.10" -H "Content-Type: application/x-www-form-urlencoded" -H "Upgrade-Insecure-Requests: 1" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7" -H "Referer: http://192.168.244.10/login.php" -H "Accept-Encoding: gzip, deflate, br" -H "Cookie: PHPSESSID=t8mp0410dd3b9c3qev33agor9r" -H "Connection: keep-alive" -d "username=admin&password=admin"
+                                                                                                                                                                                                                                               
+┌──(kali㉿kali)-[~/Desktop/Proving-Grounds/Cockpit]
+└─$ 
+
+
+
+
+
 ```
 
 ### Example Error Message
